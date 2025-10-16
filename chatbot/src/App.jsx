@@ -29,7 +29,7 @@ function App() {
     setInput("");
 
     const sessionId = "default";
-    const url = `http://localhost:8080/api/chat/stream?sessionId=${sessionId}&message=${encodeURIComponent(userMessage)}&model=${encodeURIComponent(model)}`;
+    const url = `http://107.20.64.78:8080/api/chat/stream?sessionId=${sessionId}&message=${encodeURIComponent(userMessage)}&model=${encodeURIComponent(model)}`;
 
     const eventSource = new EventSource(url);
 
