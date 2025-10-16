@@ -14,6 +14,8 @@ function App() {
   const [messages, setMessages] = useState([]);
   const messagesRef = useRef(null);
 
+  const baseURL = "https://blanket-elementary-screenshot-width.trycloudflare.com";
+
   useEffect(() => {
     // scroll to bottom when messages change
     if (messagesRef.current) {
@@ -29,7 +31,7 @@ function App() {
     setInput("");
 
     const sessionId = "default";
-    const url = `http://107.20.64.78:8080/api/chat/stream?sessionId=${sessionId}&message=${encodeURIComponent(userMessage)}&model=${encodeURIComponent(model)}`;
+    const url = `${baseURL}/api/chat/stream?sessionId=${sessionId}&message=${encodeURIComponent(userMessage)}&model=${encodeURIComponent(model)}`;
 
     const eventSource = new EventSource(url);
 
